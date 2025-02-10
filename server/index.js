@@ -2,6 +2,7 @@ import express from 'express';
 import Groq from 'groq-sdk';
 
 import { addFact, getFacts, connect, saveKnowledge, findSimilarKnowledge, getUserId, initializeUser, updateUserUsage, getUserMessages, getDailyMessageCount,  } from './database.js';
+import cors from 'cors';
 
 const app = express();
 const port = 3000;
@@ -9,6 +10,11 @@ const groq = new Groq()
 
 app.use(express.json());
 app.use(express.static('public'));
+
+app.use(cors({
+  origin: 'https://studai-frontend.onrender.com', // Allow only your frontend
+  methods: ['GET', 'POST'], // Allowed HTTP methods
+}));
 
 const HUGGINGFACE_TOKEN = process.env.HUGGINGFACE_TOKEN;
 
@@ -154,5 +160,5 @@ app.post('/api/chat', async (req, res) => {
 });
 
 app.listen(port, () => {
-  console.log(`Server running at http://localhost:${port}`);
+  console.log(`Server running on port ${port}`);
 });

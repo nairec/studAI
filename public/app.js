@@ -1,6 +1,7 @@
 // Get elements
 const chatMessages = document.getElementById('chatMessages');
 const userInput = document.getElementById('userInput');
+const API_URL = 'https://studai-tgs6.onrender.com';
 
 // Initialize userId from localStorage or generate a new one
 let userId = localStorage.getItem('studai_session');
@@ -33,7 +34,7 @@ async function sendMessage() {
 
     try {
         // Send message to the server
-        const response = await fetch('/api/chat', {
+        const response = await fetch(`${API_URL}/api/chat`, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ message, userId }) // Include userId in the request
