@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StudAI - Session Manager</title>
+    <link rel="stylesheet" href="auth.css">
+</head>
+<body>
+    <div class="auth-container">
+        <div class="auth-header">
+            <h1>Hi! I'm studAi</h1>
+            <p>Before starting to talk, I need you to enter a session Key for keeping track of the chat :)</p>
+        </div>
+        
+        <div class="auth-form">
+            <!-- Option 1: Initialize Existing Session Key -->
+            <div class="form-group">
+                <label for="sessionKey">Enter Existing Session Key or create a new one:</label>
+                <input  id="sessionKeyInput"
+                    type="text" 
+                    id="sessionKey" 
+                    placeholder="Paste your session key here">
+            </div>
+
+            <div class="auth-buttons">
+                <button class="auth-btn primary-btn" onclick="handleStartSession()">Start Session</button>
+            </div>
+
+            <div class="disclaimer">
+                <p>🔑 Use an existing session key to resume your conversation.</p>
+                <p>✨ Create a new session key to start a fresh conversation with memory.</p>
+            </div>
+        </div>
+    </div>
+    <script src="auth.js"></script>
+</body>
+</html>

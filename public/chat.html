@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Learner Chat</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="chat-container">
+        <div class="chat-header">
+            <div class="header-left">
+                <h1>studAi</h1>
+                <div class="session-key-display">
+                    Session Key: <span id="sessionKeyDisplay"></span>
+                </div>
+            </div>
+            <div class="header-right">
+                <a id="newSessionBtn" class="new-session-btn" href="/">New Session</a>
+            </div>
+        </div>
+        <div class="chat-messages" id="chatMessages"></div>
+        <div class="chat-input">
+            <input type="text" id="userInput" placeholder="Type your message...">
+            <button onclick="sendMessage()">Send</button>
+        </div>
+    </div>
+    <div id="additional-links">
+        <a href="/about">What is this?</a>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>
