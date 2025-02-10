@@ -100,7 +100,7 @@ async function completion(user_prompt,additional_info,messageHistorial) {
 }
 
 app.get('/', (req, res) => {
-  res.sendFile(process.cwd() + '/public/auth.html');
+  res.sendFile(process.cwd() + '/public/index.html');
 });
 
 app.get('/chat', (req, res) => {
