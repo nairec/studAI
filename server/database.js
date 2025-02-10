@@ -6,12 +6,6 @@ import { randomUUID } from 'crypto';
 const uri = "mongodb+srv://admin:p5e35scMnAl8o0Pm@studai.mev5s.mongodb.net/?retryWrites=true&w=majority&appName=studAi";
 const client = new MongoClient(uri);
 
-const supabaseUrl = 'https://wpwhkbtyyqyscfvfulgw.supabase.co';
-const supabaseKey = process.env.SUPABASE_KEY;
-const supabase = createClient(supabaseUrl, supabaseKey);
-
-const TABLE_NAME = 'facts';
-
 async function getCollection(collectionName) {
   try {
     await client.connect();
